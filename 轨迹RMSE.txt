@@ -1,0 +1,10 @@
+1、运行程序得到名为camera_traj.txt的文件。（程序的具体路径可以在vscode中搜索camera_traj.txt得到）。（在每次运行程序前把该文件删除，否则会接着上次的结果继续往后续写）。
+2、在2d3d_ws文件夹下搜索V1_03_GT.csv，进入其所在的文件夹中，将camera_traj.txt拷到该文件夹下
+3、命令行运行命令 evo_ape euroc V1_03_GT.csv camera_traj.txt -r full --plot --plot_mode xyz --save_results ./result.zip
+4、会得到result.zip文件，其中的error_array.npy中储存着RMSE数据
+
+可以用以下matlab代码读取数据：
+% APE w.r.t translation part (m) (not aligned)
+dis = readNPY('C:\Users\22954\Desktop\euroc结果\0601_trans_error\vins_0_trans\distances.npy')
+err = readNPY('C:\Users\22954\Desktop\euroc结果\0601_trans_error\vins_0_trans\error_array.npy')
+plot(dis,err,'LineWidth', 2.5)
