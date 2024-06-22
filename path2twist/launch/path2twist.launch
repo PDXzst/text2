@@ -1,0 +1,8 @@
+<launch>
+    
+    <node pkg="path2twist" type="path2twist_node" name="path2twist" output="screen">
+        <param name="path_topic" type="string" value="/ground_path"/>
+        <param name="twist_topic" type="string" value="/velocity_topic"/>
+    </node>
+
+</launch>
